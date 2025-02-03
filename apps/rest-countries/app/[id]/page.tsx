@@ -15,7 +15,13 @@ export default async function Id({ params }: { params: { id: string } }) {
   try {
     const { id } = await params;
     const responseData = await fetch(`http://localhost:3000/api/${id}`);
-    const country: Country = await responseData.json();
+    const {
+      country,
+      borderCountries,
+    }: {
+      country: Country;
+      borderCountries: Country[];
+    } = await responseData.json();
 
     const {
       name: countryName,
@@ -28,7 +34,6 @@ export default async function Id({ params }: { params: { id: string } }) {
       topLevelDomain,
       currencies,
       languages,
-      borders,
     } = country;
 
     return (
@@ -36,7 +41,7 @@ export default async function Id({ params }: { params: { id: string } }) {
         <BackButton />
         <section className="flex gap-[120px] mt-20">
           <img
-            className="aspect-[1.4/1] w-[560px]"
+            className="aspect-[1.4/1] min-w-[560px] w-[560px]"
             alt={`the ${countryName}'s national flag`}
             src={`${flags.png}`}
           />
@@ -96,15 +101,17 @@ export default async function Id({ params }: { params: { id: string } }) {
             </div>
 
             <div className="flex gap-4 items-center">
-              <span className="text-base font-bold">Border Countries: </span>
-              <div className="flex gap-2">
-                {borders.map((border) => (
+              <span className="text-base font-bold min-w-[144px]">
+                Border Countries:{" "}
+              </span>
+              <div className="grid grid-cols-4 gap-2">
+                {borderCountries.map(({ name, numericCode }) => (
                   <Link
-                    key={border}
-                    href={`/${border}`}
-                    className="px-7 py-[6px] flex justify-center items-center font-light bg-white rounded text-xs drop-shadow-[0_0_4px_rgb(0,0,0,0.25)]"
+                    key={name}
+                    href={`/${numericCode}`}
+                    className="px-7 py-[6px] flex justify-center items-center font-light bg-white rounded text-xs drop-shadow-[0_0_4px_rgb(0,0,0,0.25)] text-center"
                   >
-                    {border}
+                    {name}
                   </Link>
                 ))}
               </div>

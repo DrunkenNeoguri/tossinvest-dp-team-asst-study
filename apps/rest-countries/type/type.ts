@@ -9,7 +9,7 @@ export interface Country {
   subregion: string;
   region: string;
   population: number;
-  latlng: [number, number];
+  latlng: number[];
   demonym: string;
   area: number;
   timezones: string[];
@@ -37,6 +37,4 @@ export interface Country {
     acronym: string;
     name: string;
   }[];
-  cioc: string;
-  independent: boolean;
 }

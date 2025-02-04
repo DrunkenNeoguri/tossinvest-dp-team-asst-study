@@ -7,6 +7,23 @@ export async function GET(request: NextRequest) {
     const queryKeyword = searchParams.get("keyword");
     const queryRegion = searchParams.get("region");
 
+    if (queryRegion && queryKeyword) {
+      const searchResultCountries = await data
+        .filter((country) =>
+          country.name
+            .toLocaleLowerCase()
+            .includes(queryKeyword.toLocaleLowerCase())
+        )
+        .filter((country) =>
+          country.name
+            .toLocaleLowerCase()
+            .includes(queryKeyword.toLocaleLowerCase())
+        );
+      return searchResultCountries
+        ? NextResponse.json(searchResultCountries)
+        : [];
+    }
+
     if (queryKeyword) {
       const searchResultCountries = await data.filter((country) =>
         country.name

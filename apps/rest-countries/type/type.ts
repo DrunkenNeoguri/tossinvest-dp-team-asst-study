@@ -7,7 +7,7 @@ export interface Country {
   capital: string;
   altSpellings: string[];
   subregion: string;
-  region: string;
+  region: Regions;
   population: number;
   latlng: number[];
   demonym: string;
@@ -38,3 +38,5 @@ export interface Country {
     name: string;
   }[];
 }
+
+export type Regions = "Africa" | "America" | "Asia" | "Europe" | "Oceania";

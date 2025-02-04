@@ -4,6 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: hsl(0, 0%, 98%);
   --element: hsl(0, 0%, 100%);
@@ -32,6 +34,7 @@ body {
   font-family: "Nunito Sans", Arial, Helvetica, sans-serif;
   font-size: 14px;
   width: 1440px;
+  margin-bottom: 48px;
   @media (max-width: 640px) {
     width: 375px;
   }

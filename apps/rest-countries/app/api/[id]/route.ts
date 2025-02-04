@@ -14,9 +14,11 @@ export async function GET(
       (country) => country.numericCode === id
     )) as Country;
 
-    const borderCountriesData = await data.filter((country) =>
-      findCountryData.borders.includes(country.alpha3Code)
-    );
+    const borderCountriesData = !findCountryData.borders
+      ? []
+      : await data.filter((country) =>
+          findCountryData.borders.includes(country.alpha3Code)
+        );
 
     return NextResponse.json({
       country: findCountryData,

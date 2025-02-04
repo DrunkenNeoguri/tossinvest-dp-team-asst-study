@@ -14,11 +14,11 @@ export function RegionCard(props: Props) {
   return (
     <Link
       href={`/${numericCode}`}
-      className="w-[264px] h-[336px] flex flex-col bg-white rounded-lg"
+      className="w-[264px] h-[336px] flex flex-col bg-white rounded-lg drop-shadow-[0_4px_4px_rgba(0,0,0,0.25)] duration-300 ease-in hover:scale-25"
     >
       <div className="w-full h-40">
         <img
-          className="aspect-[1.65/1] max-w-[264px] rounded-t-lg"
+          className="aspect-[1.65/1] max-w-[264px] rounded-t-lg drop-shadow-[0_4px_4px_rgba(0,0,0,0.05)]"
           alt={`the ${region}'s national flag`}
           src={flag}
         />

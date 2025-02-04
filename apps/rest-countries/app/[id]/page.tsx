@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BackButton } from "./_components/back-button";
 
 export async function generateStaticParams() {
-  const responseData = await fetch(`http://localhost:3001/api/list`);
+  const responseData = await fetch(`http://localhost:3000/api/list`);
   const countries: Country[] = await responseData.json();
 
   return countries.map(({ numericCode }) => ({
@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 export default async function Id({ params }: { params: { id: string } }) {
   try {
     const { id } = await params;
-    const responseData = await fetch(`http://localhost:3001/api/${id}`);
+    const responseData = await fetch(`http://localhost:3000/api/${id}`);
     const {
       country,
       borderCountries,

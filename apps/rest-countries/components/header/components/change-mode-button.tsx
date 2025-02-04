@@ -13,7 +13,7 @@ export function ChangeModeButton() {
       onClick={setMode}
     >
       <img
-        src="http://localhost:3001/icon-moon.svg"
+        src="http://localhost:3000/icon-moon.svg"
         className="w-4 h-4 "
         alt="change dark mode button"
       />

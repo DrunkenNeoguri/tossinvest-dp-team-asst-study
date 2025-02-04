@@ -27,7 +27,7 @@ export function SearchBar() {
       />
       <img
         className="w-5 h-5 absolute z-20 top-[18px] left-8"
-        src="http://localhost:3001/icon-search.svg"
+        src="http://localhost:3000/icon-search.svg"
         alt="search bar icon"
       />
     </div>

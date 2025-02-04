@@ -5,7 +5,7 @@ import { Fragment } from "react";
 
 export default async function Home() {
   try {
-    const responseData = await fetch(`http://localhost:3001/api/list`);
+    const responseData = await fetch(`http://localhost:3000/api/list`);
     const countries: Country[] = await responseData.json();
 
     return (

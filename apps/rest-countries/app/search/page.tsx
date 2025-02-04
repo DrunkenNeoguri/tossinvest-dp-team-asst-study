@@ -10,7 +10,7 @@ export default async function Search({
 }) {
   try {
     const responseData = await fetch(
-      `http://localhost:3001/api/list?keyword=${searchParams.keyword}`
+      `http://localhost:3000/api/search?keyword=${searchParams.keyword}`
     );
     const countries: Country[] = await responseData.json();
 

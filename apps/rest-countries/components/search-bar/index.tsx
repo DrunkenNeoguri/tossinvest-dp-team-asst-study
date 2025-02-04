@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { ChangeEvent, Fragment, KeyboardEvent, useState } from "react";
+import { ChangeEvent, KeyboardEvent, useState } from "react";
 
 export function SearchBar() {
   const [searchKeyword, setSearchKeyword] = useState<string>("");

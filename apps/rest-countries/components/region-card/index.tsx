@@ -28,7 +28,9 @@ export function RegionCard(props: Props) {
         <div className="flex flex-col gap-2 justify-start">
           <div>
             <span className="text-xs font-bold">Population: </span>
-            <span className="text-xs font-light">{population}</span>
+            <span className="text-xs font-light">
+              {population.toLocaleString()}
+            </span>
           </div>
           <div>
             <span className="text-xs font-bold">Region: </span>

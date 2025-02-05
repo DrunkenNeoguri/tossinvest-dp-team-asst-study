@@ -33,6 +33,11 @@ export function Dropdown() {
       >
         <span>{queryRegion != null ? queryRegion : "Filter by Region"}</span>
       </button>
+      <img
+        src="http://localhost:3000/icon-dropdown.svg"
+        alt="Dropdown icon"
+        className="absolute top-6 w-2 h-2 right-11"
+      />
 
       <div
         className={

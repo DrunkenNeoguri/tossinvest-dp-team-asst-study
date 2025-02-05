@@ -59,7 +59,9 @@ export default async function Id({ params }: { params: { id: string } }) {
 
                 <div className="flex gap-1">
                   <span className="text-base font-bold">Population: </span>
-                  <span className="text-base font-light">{population}</span>
+                  <span className="text-base font-light">
+                    {population.toLocaleString()}
+                  </span>
                 </div>
 
                 <div className="flex gap-1">

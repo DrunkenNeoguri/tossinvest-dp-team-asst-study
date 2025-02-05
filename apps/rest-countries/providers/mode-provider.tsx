@@ -18,7 +18,6 @@ export function ModeProvider({ children }: { children: ReactNode }) {
   const [mode, setMode] = useState<ModeType>("light");
 
   const handleChangeMode = () => {
-    console.log(mode);
     return mode === "light" ? setMode("dark") : setMode("light");
   };
 

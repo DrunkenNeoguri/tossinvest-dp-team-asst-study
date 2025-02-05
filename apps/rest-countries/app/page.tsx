@@ -1,3 +1,4 @@
+import { Dropdown } from "@/components/dropdown";
 import { RegionCard } from "@/components/region-card";
 import { SearchBar } from "@/components/search-bar";
 import { Country } from "@/type/type";
@@ -10,7 +11,10 @@ export default async function Home() {
 
     return (
       <Fragment>
-        <SearchBar />
+        <div className="w-full flex justify-between my-12">
+          <SearchBar />
+          <Dropdown />
+        </div>
         <div className="grid grid-cols-4 gap-[76px]">
           {countries.map((country) => (
             <RegionCard

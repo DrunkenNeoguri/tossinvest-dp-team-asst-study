@@ -12,14 +12,15 @@ export function SearchBar() {
 
   const handleOnEnter = (event: KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
+      // TODO: 차후에 region이 있으면 겹쳐서 검사하도록 처리 필요.
       router.push(`/search?keyword=${searchKeyword}`);
     }
   };
 
   return (
-    <div className="relative my-12">
+    <div className="relative">
       <input
-        className=" w-[40rem] h-14 pl-[76px] px-7 py-4 placeholder-gray-500 text-black drop-shadow-[0_0px_4px_rgba(0,0,0,0.25)] rounded-md"
+        className="w-[40rem] h-14 pl-[76px] px-7 py-4 placeholder-gray-500 text-black drop-shadow-[0_0px_4px_rgba(0,0,0,0.25)] rounded-md"
         type="text"
         placeholder="Search for a country..."
         onChange={handleOnChange}

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/header";
-import { ModeProvider } from "@/providers/mode-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,10 +15,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="mt-20">
-        <ModeProvider>
-          <Header />
-          {children}
-        </ModeProvider>
+        <Header />
+        {children}
       </body>
     </html>
   );

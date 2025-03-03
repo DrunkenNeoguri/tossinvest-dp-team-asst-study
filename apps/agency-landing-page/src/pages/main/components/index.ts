@@ -4,3 +4,4 @@ export { DescriptionSection } from "./description-section";
 export { FeedbackSection } from "./feedback-section";
 export { Footer } from "./footer";
 export { MobileToggleMenu } from "./mobile-toggle-menu";
+export { ImageSection } from "./image-section";

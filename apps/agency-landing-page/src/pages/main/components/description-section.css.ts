@@ -3,6 +3,7 @@ import TransformImage from "../../../assets/desktop/image-transform.jpg";
 import StandOutImage from "../../../assets/desktop/image-stand-out.jpg";
 import GraphicDesignImage from "../../../assets/desktop/image-graphic-design.jpg";
 import PhotographyImage from "../../../assets/desktop/image-photography.jpg";
+import { color } from "../../../utils/color.css";
 
 const section = style({
   display: "flex",
@@ -40,6 +41,7 @@ const descTitle = style({
   lineHeight: "49px",
   letterSpacing: "0.02em",
   margin: 0,
+  color: color.veryDarkDesaturatedBlue,
 });
 
 const descText = style({
@@ -52,6 +54,7 @@ const descText = style({
   width: "100%",
   whiteSpace: "pre-wrap",
   textAlign: "left",
+  color: color.darkGrayishBlue,
 });
 
 const learnMoreText = style({
@@ -92,6 +95,26 @@ const bottomBlockText = style({
   textAlign: "center",
   margin: 0,
 });
+
+const graphicDesignTitle = style([
+  bottomBlockTitle,
+  style({ color: color.darkDesaturatedCyan }),
+]);
+
+const graphicDesignText = style([
+  bottomBlockText,
+  style({ color: color.darkDesaturatedCyan }),
+]);
+
+const photographyTitle = style([
+  bottomBlockTitle,
+  style({ color: color.darkBlue }),
+]);
+
+const photographyText = style([
+  bottomBlockText,
+  style({ color: color.darkBlue }),
+]);
 
 const image = style({
   backgroundSize: "cover",
@@ -148,7 +171,9 @@ export const descriptionSectionStyle = Object.assign(
     graphicDesignImage,
     photographyImage,
     bottomBlockBox,
-    bottomBlockTitle,
-    bottomBlockText,
+    graphicDesignTitle,
+    graphicDesignText,
+    photographyTitle,
+    photographyText,
   }
 );

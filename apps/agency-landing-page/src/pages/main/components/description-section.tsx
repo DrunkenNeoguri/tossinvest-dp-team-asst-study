@@ -33,10 +33,10 @@ export function DescriptionSection() {
       <div className={descriptionSectionStyle.flexBox}>
         <div className={descriptionSectionStyle.graphicDesignImage}>
           <div className={descriptionSectionStyle.bottomBlockBox}>
-            <h2 className={descriptionSectionStyle.bottomBlockTitle}>
+            <h2 className={descriptionSectionStyle.graphicDesignTitle}>
               Graphic design
             </h2>
-            <p className={descriptionSectionStyle.bottomBlockText}>
+            <p className={descriptionSectionStyle.graphicDesignText}>
               Great design makes you memorable. We deliver artwork that
               underscores your brand message and captures potential clients’
               attention.
@@ -46,10 +46,10 @@ export function DescriptionSection() {
 
         <div className={descriptionSectionStyle.photographyImage}>
           <div className={descriptionSectionStyle.bottomBlockBox}>
-            <h2 className={descriptionSectionStyle.bottomBlockTitle}>
+            <h2 className={descriptionSectionStyle.graphicDesignTitle}>
               Photography
             </h2>
-            <p className={descriptionSectionStyle.bottomBlockText}  >
+            <p className={descriptionSectionStyle.graphicDesignText}>
               Increase your credibility by getting the most stunning,
               high-quality photos that improve your business image.
             </p>

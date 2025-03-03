@@ -1,4 +1,5 @@
 import { style } from "@vanilla-extract/css";
+import { color } from "../../../utils/color.css";
 
 const headerStyle = style({
   background: "transparent",
@@ -22,6 +23,7 @@ const navStyle = style({
   alignItems: "center",
   gap: "32px",
   boxSizing: "border-box",
+  color: color.white,
 });
 
 export const NavBarStyle = Object.assign({}, { headerStyle, navStyle });

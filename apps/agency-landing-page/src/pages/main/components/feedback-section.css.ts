@@ -2,6 +2,7 @@ import { style } from "@vanilla-extract/css";
 import EmilyProfileImage from "../../../assets/image-emily.jpg";
 import ThomasProfileImage from "../../../assets/image-thomas.jpg";
 import JennieProfileImage from "../../../assets/image-jennie.jpg";
+import { color } from "../../../utils/color.css";
 
 const section = style({
   display: "flex",
@@ -12,6 +13,7 @@ const section = style({
   justifyContent: "center",
   alignItems: "center",
   margin: "auto",
+  padding: "160px 0 ",
 });
 
 const title = style({
@@ -20,6 +22,7 @@ const title = style({
   fontSize: "20px",
   lineHeight: "25px",
   letterSpacing: "0.28em",
+  color: color.grayishBlue,
 });
 
 const flexBox = style({
@@ -63,6 +66,7 @@ const feedbackText = style({
   margin: "56px 0",
   whiteSpace: "pre-wrap",
   textAlign: "center",
+  color: color.veryDarkGrayishBlue,
 });
 
 const feedbackName = style({
@@ -71,6 +75,7 @@ const feedbackName = style({
   fontSize: "19px",
   lineHeight: "23px",
   margin: "12px 0",
+  color: color.veryDarkDesaturatedBlue,
 });
 
 const feebackJob = style({
@@ -79,6 +84,7 @@ const feebackJob = style({
   fontSize: "14px",
   lineHeight: "17px",
   letterSpacing: "-0.01em",
+  color: color.grayishBlue,
 });
 
 const emilyProfileImage = style([

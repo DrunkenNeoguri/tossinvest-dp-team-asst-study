@@ -1,87 +1,55 @@
+import { descriptionSectionStyle } from "./description-section.css";
+
 export function DescriptionSection() {
   return (
-    <section>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        <div style={{ display: "flex", width: "100%", height: "100%" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <h2>Transform your brand</h2>
-            <p>
-              We are a full-service creative agency specializing in helping
-              brands grow fast. Engage your clients through compelling visuals
-              that do most of the marketing for you.
-            </p>
-            <a>Learn more</a>
-          </div>
-          <div>
-            <img />
-          </div>
+    <section className={descriptionSectionStyle.section}>
+      <div className={descriptionSectionStyle.flexBox}>
+        <div className={descriptionSectionStyle.descBox}>
+          <h2 className={descriptionSectionStyle.descTitle}>
+            Transform your brand
+          </h2>
+          <p className={descriptionSectionStyle.descText}>
+            {`We are a full-service creative agency specializing in\nhelping brands grow fast. Engage your clients through\ncompelling visuals that do most of the marketing for you.`}
+          </p>
+          <a className={descriptionSectionStyle.learnMoreText}>Learn more</a>
         </div>
+        <div className={descriptionSectionStyle.transformImage} />
+      </div>
 
-        <div style={{ display: "flex", width: "100%", height: "100%" }}>
-          <div>
-            <img />
-          </div>
+      <div className={descriptionSectionStyle.flexBox}>
+        <div className={descriptionSectionStyle.standOutImage} />
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <h2>Stand out to the right audience</h2>
-            <p>
-              Using a collaborative formula of designers, researchers,
-              photographers, videographers, and copywriters, we’ll build and
-              extend your brand in digital places.
-            </p>
-            <a>Learn more</a>
-          </div>
+        <div className={descriptionSectionStyle.descBox}>
+          <h2 className={descriptionSectionStyle.descTitle}>
+            Stand out to the right audience
+          </h2>
+          <p className={descriptionSectionStyle.descText}>
+            {`Using a collaborative formula of designers, researchers,\nphotographers, videographers, and copywriters, we’ll\nbuild and extend your brand in digital places.`}
+          </p>
+          <a className={descriptionSectionStyle.learnMoreText}>Learn more</a>
         </div>
+      </div>
 
-        <div style={{ display: "flex", width: "100%", height: "100%" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <img />
-            <h2>Graphic design</h2>
-            <p>
+      <div className={descriptionSectionStyle.flexBox}>
+        <div className={descriptionSectionStyle.graphicDesignImage}>
+          <div className={descriptionSectionStyle.bottomBlockBox}>
+            <h2 className={descriptionSectionStyle.bottomBlockTitle}>
+              Graphic design
+            </h2>
+            <p className={descriptionSectionStyle.bottomBlockText}>
               Great design makes you memorable. We deliver artwork that
               underscores your brand message and captures potential clients’
               attention.
             </p>
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <img />
-            <h2>Photography</h2>
-            <p>
+        </div>
+
+        <div className={descriptionSectionStyle.photographyImage}>
+          <div className={descriptionSectionStyle.bottomBlockBox}>
+            <h2 className={descriptionSectionStyle.bottomBlockTitle}>
+              Photography
+            </h2>
+            <p className={descriptionSectionStyle.bottomBlockText}  >
               Increase your credibility by getting the most stunning,
               high-quality photos that improve your business image.
             </p>

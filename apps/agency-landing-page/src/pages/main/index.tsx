@@ -3,14 +3,11 @@ import {
   FeedbackSection,
   Footer,
   MainSection,
-  NavBar,
 } from "./components";
 
 export default function Main() {
-  console.log("Main");
   return (
     <main>
-      <NavBar />
       <MainSection />
       <DescriptionSection />
       <FeedbackSection />

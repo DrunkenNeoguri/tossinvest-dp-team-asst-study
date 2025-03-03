@@ -2,15 +2,18 @@ import {
   DescriptionSection,
   FeedbackSection,
   Footer,
+  ImageSection,
   MainSection,
 } from "./components";
+import { mainStyle } from "./main.css";
 
 export default function Main() {
   return (
-    <main>
+    <main className={mainStyle}>
       <MainSection />
       <DescriptionSection />
       <FeedbackSection />
+      <ImageSection />
       <Footer />
     </main>
   );

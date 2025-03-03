@@ -11,4 +11,5 @@ export const color = createGlobalTheme(":root", {
   darkGrayishBlue: "hsl(232, 10%, 55%)",
   grayishBlue: "hsl(210, 4%, 67%)",
   white: "hsl(0, 0%, 100%)",
+  moderateModerateCyan: "hsl(166.76,44.16%,69.8%)",
 });

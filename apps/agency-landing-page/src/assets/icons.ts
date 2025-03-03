@@ -5,6 +5,7 @@ import InstagramIcon from "./icon-instagram.svg?react";
 import PinterestIcon from "./icon-pinterest.svg?react";
 import HamburgerIcon from "./icon-hamburger.svg?react";
 import Logo from "./logo.svg?react";
+import LogoCyan from "./logo-cyan.svg?react";
 
 export {
   ArrowDownIcon,
@@ -14,4 +15,5 @@ export {
   PinterestIcon,
   HamburgerIcon,
   Logo,
+  LogoCyan,
 };

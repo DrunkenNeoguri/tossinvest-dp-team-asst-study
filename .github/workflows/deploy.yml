@@ -1,16 +1,23 @@
 name: Deploy Asst's Study Project With GitHub Pages
 
+# 배포 단계는 아래를 거침
+
+# on -> 쉘스크립트를 실행
+# push: branches: 어떤 브랜치에서 push가 되었을 때 실행함.
 on:
   push:
     branches:
       - main
 
+# permissions: 쉘 스크립트를 실행할 시, 권한 요청이 필요하면 적용함.
 permissions:
   contents: write
   pages: write
   id-token: write
 
+# jobs: 쉘 스크립트를 어떤 절차를 짚고 갈 것인지 적용
 jobs:
+  # build: 빌드 단계에서의 적용 - 우분투를 기준으로 진행
   build:
     runs-on: ubuntu-latest
     steps:
@@ -20,22 +27,28 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
+      # 레포지토리 확인 -> 의존성 패키지 설치 -> 프로젝트 경로 찾아 빌드
       - name: Build CSS Library Study
         run: |
           cd apps/agency-landing-page
           yarn build
 
+      # 배포 사항을 본래 보여주고 싶은 경로에 맞게 배치되도록 조정
       - name: Prepare Directory Structure
         run: |
           mkdir -p ./gh-pages-root/agency-landing-page
           cp -r ./apps/agency-landing-page/dist/* ./gh-pages-root/agency-landing-page/
           ls -la ./gh-pages-root/agency-landing-page/
 
+      # 깃헙 페이지를 위한 아티팩트 생성 후 업로드
       - name: Upload Artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./gh-pages-root
 
+  # deploy: 배포 단계에서의 적용
+  # environment에서는 배포 환경을 설정
+  # needs에서는 해당 단계가 진행되기 위한 필요한 조건을 반영
   deploy:
     environment:
       name: github-pages

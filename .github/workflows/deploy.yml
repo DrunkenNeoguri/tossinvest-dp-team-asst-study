@@ -25,6 +25,12 @@ jobs:
           cd apps/agency-landing-page
           yarn build
 
+      - name: Upload Artifact for GitHub Pages
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-pages-artifact
+          path: apps/agency-landing-page/build
+
   deploy:
     environment:
       name: github-pages

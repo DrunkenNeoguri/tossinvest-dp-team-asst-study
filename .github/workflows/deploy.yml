@@ -20,21 +20,25 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: Debug Directory Structure Before Build
-        run: find apps -type d | sort
+      - name: Check package.json build script
+        run: |
+          cd apps/agency-landing-page
+          cat package.json
 
       - name: Build CSS Library Study
         run: |
           cd apps/agency-landing-page
           yarn build
 
-      - name: Debug Directory Structure After Build
-        run: find apps -type d | sort
+      - name: List all directories and files after build
+        run: |
+          find apps -type f | grep -v "node_modules" | sort
+          find apps -type d | grep -v "node_modules" | sort
 
       - name: Upload Artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: apps/agency-landing-page/build
+          path: ./apps/agency-landing-page/dist
 
   deploy:
     environment:

@@ -45,7 +45,7 @@ export async function GET(request: NextRequest) {
         ? NextResponse.json(searchResultCountries)
         : [];
     }
-  } catch (error) {
+  } catch {
     throw new Error("데이터가 없습니다.");
   }
 }

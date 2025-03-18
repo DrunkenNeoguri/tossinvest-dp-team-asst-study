@@ -1,0 +1,45 @@
+name: Deploy Asst's Study Project With GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # main 브랜치에 push될 때 실행
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Install Dependencies
+        run: |
+          yarn install  # Monorepo 전체 종속성 설치
+
+      - name: Build CSS Library Study
+        run: |
+          cd apps/agency-landing-page
+          yarn build
+
+      - name: Build Rehabilitation Study
+        run: |
+          cd apps/rest-countries
+          yarn build
+
+      - name: Deploy CSS Library Study
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: apps/agency-landing-page/build
+          destination_dir: agency-landing-page
+
+      - name: Deploy Rehabilitation Study
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: apps/rest-countries/build
+          destination_dir: rest-countries

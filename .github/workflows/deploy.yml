@@ -28,7 +28,7 @@ jobs:
       - name: Upload Artifact for GitHub Pages
         uses: actions/upload-artifact@v4
         with:
-          name: github-pages-artifact
+          name: github-pages
           path: apps/agency-landing-page/build
 
   deploy:
@@ -38,6 +38,15 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: .
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
